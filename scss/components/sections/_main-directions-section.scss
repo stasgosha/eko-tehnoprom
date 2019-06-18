@@ -1,0 +1,11 @@
+.main-directions-section{
+	padding: 75px 0;
+
+	&.gray-bg{
+		background: #f3f3f3;
+	}
+
+	@media screen and (max-width: 767px){
+		padding: 40px 0;
+	}
+}

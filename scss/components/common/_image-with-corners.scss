@@ -1,0 +1,63 @@
+.image-with-corners{
+	width: 100%;
+	position: relative;
+	max-width: 540px;
+	margin: 0 auto 45px;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+	img{
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+
+	&:before,
+	&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 64px;
+		height: 64px;
+	}
+
+	&:before{
+		left: -18px;
+		top: -16px;
+		border-left: 1px solid #e4e2e2;
+		border-top: 1px solid #e4e2e2;
+	}
+
+	&:after{
+		right: -11px;
+		bottom: -16px;
+		border-right: 1px solid #e4e2e2;
+		border-bottom: 1px solid #e4e2e2;
+	}
+
+	.big-corners{
+		&:before,
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			width: 126px;
+			height: 126px;
+			background: url(../img/big-corners.png) no-repeat;
+		}
+
+		&:before{
+			top: -16px;
+			right: -15px;
+			background-position: right top;
+		}
+
+		&:after{
+			left: -18px;
+			bottom: -16px;
+			background-position: left bottom;
+		}
+	}
+}

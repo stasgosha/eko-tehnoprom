@@ -1,0 +1,50 @@
+.breadcrumbs-section{
+	padding: 20px 0;
+	// position: absolute;
+	z-index: 5;
+	width: 100%;
+	background: #f3f3f3;
+
+	+ section{
+		padding-top: 30px;
+	}
+}
+
+.breadcrumbs{
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+	width: 100%;
+
+	li{
+		font-size: 12px;
+		line-height: 14px;
+		color: $text-dark;
+		display: flex;
+		align-items: center;
+
+		&:after{
+			content: "";
+			display: block;
+			margin: 0 8px;
+			height: 14px;
+			width: 1px;
+			background: #d4d4d4;
+		}
+
+		&:last-child{
+			&:after{
+				display: none;
+			}
+		}
+
+		a{
+			color: $text-dark;
+			text-decoration: underline;
+
+			&:hover{
+				color: $accent;
+			}
+		}
+	}
+}

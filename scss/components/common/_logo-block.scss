@@ -1,0 +1,43 @@
+.logo-block{
+	display: flex;
+	align-items: stretch;
+
+	.logo-link{
+		display: flex;
+		align-items: center;
+
+		img{
+			display: block;
+			margin-right: 13px;
+		}
+
+		span{
+			font-family: $second-font;
+			text-transform: uppercase;
+			color: $text-dark;
+			font-size: 24px;
+			line-height: 30px;
+			font-weight: bold;
+			letter-spacing: 0.05em;
+		}
+	}
+
+	.logo-slogan{
+		margin-left: 20px;
+		padding-left: 20px;
+		border-left: 3px solid #e2e2e2;
+		display: flex;
+		align-items: center;
+		font-size: 14px;
+		line-height: 22px;
+	}
+
+	@media screen and (max-width: 474px){
+		flex-direction: column;
+
+		.logo-slogan{
+			margin-left: 55px;
+			border-left-width: 1px;
+		}
+	}
+}

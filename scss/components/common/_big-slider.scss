@@ -1,0 +1,16 @@
+.big-slider{
+	.slide{
+		width: 1170px;
+		transition: all .6s;
+
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+
+		&:not(.slick-current){
+			transform: scale(.72);
+		}
+	}
+}

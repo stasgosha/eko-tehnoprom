@@ -1,0 +1,25 @@
+.faq-page{
+	padding: 75px 0;
+	background: #f3f3f3;
+
+	.cards-list{
+		margin-bottom: 0;
+	}
+}
+
+.faq-list{
+	max-width: 770px;
+	margin: 0 auto 35px;
+
+	.item{
+		margin-bottom: 30px;
+
+		@media screen and (max-width: 575px){
+			margin-bottom: 15px;
+		}
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}

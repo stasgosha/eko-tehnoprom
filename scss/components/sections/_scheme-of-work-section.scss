@@ -1,0 +1,11 @@
+.scheme-of-work-section{
+	box-shadow: 7px 7px 25px rgba(#001531, .2);
+	background: #fff;
+	padding: 85px 0;
+
+	@media screen and (max-width: 767px){
+		box-shadow: none;
+		background: #f3f3f3;
+		padding: 40px 0;
+	}
+}

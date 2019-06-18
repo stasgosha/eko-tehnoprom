@@ -1,0 +1,100 @@
+.review-card{
+	padding: 35px 20px 30px;
+	background: #fff;
+	box-shadow: 7px 7px 25px rgba(#001531, .08);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	border-bottom: 3px solid $primary;
+
+	.card-header{
+		display: flex;
+		align-items: center;
+		flex: none;
+		padding-bottom: 35px;
+		position: relative;
+		margin-bottom: 20px;
+
+		&:after{
+			content: '';
+			width: 65px;
+			height: 1px;
+			background: #dcdcdc;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		.card-header-content{
+			flex: auto;
+
+			p{
+				font-size: 14px;
+				line-height: 20px;
+
+				&.author{
+					margin-bottom: 5px;
+					font-family: $second-font;
+					font-weight: bold;
+					color: $text-dark;
+					letter-spacing: 0.05em;
+					font-size: 18px;
+					line-height: 24px;
+				}
+			}
+		}
+
+		.card-header-icon{
+			flex: none;
+			margin-left: 20px;
+
+			i{
+				display: block;
+			}
+		}
+	}
+
+	.card-content{
+		flex: auto;
+		margin-bottom: 30px;
+		min-height: 180px;
+	}
+
+	.card-footer{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.card-date{
+			margin-right: 15px;
+			font-size: 14px;
+			line-height: 22px;
+		}
+
+		.more-link{
+			display: flex;
+			align-items: center;
+			white-space: nowrap;
+
+			i{
+				display: block;
+				margin-right: 7px;
+			}
+
+			span{
+				color: $text-color;
+				text-decoration: underline;
+				font-size: 14px;
+				line-height: 22px;
+				transition: all $t;
+			}
+
+			&:hover{
+				span{
+					color: $accent;
+				}
+			}
+		}
+	}
+}

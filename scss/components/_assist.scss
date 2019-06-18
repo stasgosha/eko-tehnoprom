@@ -1,0 +1,55 @@
+$colors: (
+	white: #fff,
+	text: $text-color,
+	accent: $accent,
+	primary: $primary,
+);
+
+// blue: $blue,
+// orange: $orange,
+// dark: $text-dark
+
+@each $i in $colors{
+	$color-key: nth($i, 1);
+	$color-value: nth($i, 2);
+
+	&.color-#{$color-key}{
+		color: $color-value !important;
+	}
+}
+
+// Font Face
+@mixin font-face($font-family, $font-name, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: '#{$font-family}';
+		src: url('../fonts/#{$font-name}.ttf') format('truetype'),
+			url('../fonts/#{$font-name}.woff') format('woff');
+		font-display: auto;
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+.push{
+	position: relative;
+}
+
+.flex-center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-right{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.flex-auto{
+	flex: auto;
+}
+
+.no-wrap{
+	white-space: nowrap;
+}

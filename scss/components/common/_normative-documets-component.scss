@@ -1,0 +1,188 @@
+.normative-documets-component{
+	display: flex;
+	margin-bottom: 140px;
+	border: 3px solid $primary;
+	position: relative;
+	z-index: 2;
+
+	&:before{
+		content: '';
+		display: block;
+		width: 474px;
+		height: 192px;
+		background: url(../img/normatives/before-bg.png) no-repeat right bottom;
+		background-size: contain;
+		position: absolute;
+		right: 39px;
+		bottom: calc(100% + 3px);
+		z-index: -1;
+	}
+
+	&:after{
+		content: '';
+		display: block;
+		width: 426px;
+		height: 70px;
+		background: url(../img/normatives/pencil.png) no-repeat left top;
+		background-size: contain;
+		position: absolute;
+		z-index: -1;
+		bottom: -115px;
+		left: -40px;
+		max-width: calc(100% - 660px);
+		min-width: 240px;
+	}
+
+	.cmp-content{
+		padding: 20px 60px 25px;
+		position: relative;
+
+		.cmp-caption{
+			font-size: 22px;
+			line-height: 30px;
+			color: $text-dark;
+			letter-spacing: 0.05em;
+			position: absolute;
+			left: 60px;
+			top: -20px;
+			z-index: 2;
+
+			&:before{
+				content: '';
+				display: block;
+				width: calc(100% + 40px);
+				height: 100%;
+				background: $body-bg;
+				position: absolute;
+				left: -20px;
+				top: 0;
+				z-index: -1;
+			}
+		}
+	}
+
+	.cmp-sliders{
+		margin-top: -91px;
+		margin-bottom: -143px;
+		padding: 0 100px;
+		flex: none;
+		position: relative;
+
+		.cert-image-slider{
+			width: 270px;
+			box-shadow: $shadow;
+
+			img{
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
+
+			.slick-arrow{
+				top: 124px;
+				transform: translateY(0);
+			}
+		}
+
+		.cert-descr-slider{
+			position: absolute;
+			right: 390px;
+			bottom: 0;
+			width: 235px;
+		}
+	}
+
+	.gray-bg &{
+		&:before{
+			width: 365px;
+		}
+
+		.cmp-content{
+			.cmp-caption:before{
+				background: #f3f3f3;
+			}
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		flex-direction: column;
+		border: 0;
+		margin-bottom: 0;
+
+		&:before,
+		&:after{
+			display: none;
+		}
+
+		.cmp-content{
+			padding: 0;
+			margin-bottom: 20px;
+
+			.cmp-caption{
+				position: static;
+				margin-bottom: 15px;
+
+				&:before{
+					display: none;
+				}
+			}
+		}
+
+		.cmp-sliders{
+			margin: 0;
+
+			.cert-image-slider{
+				margin: 0 auto;
+
+				.slick-arrow{
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+
+			.cert-descr-slider{
+				position: static;
+				width: 270px;
+				margin: 0 auto;
+
+				.slide{
+					text-align: center;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		.cmp-content{
+		}
+
+		.cmp-sliders{
+			padding: 0;
+
+			.cert-image-slider{
+				margin-bottom: 45px;
+			}
+
+			.cert-descr-slider{
+				.slide{
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+.cert-image-slider{}
+
+.cert-descr-slider{
+	.slide{
+		font-size: 15px;
+		line-height: 24px;
+		font-style: italic;
+		height: 140px;
+		padding-top: 20px;
+		text-align: right;
+		color: $text-dark;
+	}
+}

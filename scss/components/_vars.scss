@@ -1,0 +1,24 @@
+// Fonts
+$main-font: 'Roboto', Arial, sans-serif;
+$second-font: 'Helios Cond', $main-font;
+$s-font: $second-font;
+
+
+// Colors
+$lightblue: #347de0;
+$green: #46c840;
+
+$dark: #2c2c2c;
+$gray: #585858;
+
+$text-color: $gray;
+$text-dark: $dark;
+
+$primary: $lightblue;
+$accent: $green;
+
+// Params
+$body-bg: #fff; // site background
+$t: .3s; // animation duration
+$r: 5px; // default border radius
+$shadow: 7px 7px 25px rgba(#001531, .2); // default card shadow

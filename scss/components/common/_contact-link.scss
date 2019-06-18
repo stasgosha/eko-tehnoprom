@@ -1,0 +1,43 @@
+.contact-link{
+	display: flex;
+	align-items: center;
+	color: $text-dark;
+
+	.link-icon{
+		flex: none;
+		margin-right: 8px;
+		display: block;
+
+		i{
+			display: block;
+		}
+	}
+
+	.link-text{
+		display: block;
+		font-size: 14px;
+		line-height: 22px;
+		text-decoration: underline;
+		transition: all $t;
+	}
+
+	&:hover{
+		.link-text{
+			color: $accent;
+		}
+	}
+
+	&[href*="tel:"]{
+		.link-text{
+			text-transform: uppercase;
+			font-family: $second-font;
+			text-decoration: none;
+			letter-spacing: 0.05em;
+			font-size: 18px;
+
+			&:hover{
+				color: $accent;
+			}
+		}
+	}
+}

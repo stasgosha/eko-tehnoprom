@@ -1,0 +1,116 @@
+.project-card{
+	position: relative;
+	display: flex;
+	background: $primary;
+	height: 100%;
+	flex-direction: column;
+	box-shadow: $shadow;
+	transition: all $t;
+
+	&:hover{
+		background: $accent;
+	}
+
+	.card-image{
+		height: 260px;
+		flex: none;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
+	.card-content{
+		display: flex;
+		flex: auto;
+		flex-direction: column;
+		padding: 20px 25px;
+		color: #fff;
+
+		.card-name{
+			flex: auto;
+			margin-bottom: 5px;
+			font-size: 20px;
+			line-height: 30px;
+			font-family: $second-font;
+			font-weight: bold;
+			color: #fff;
+			letter-spacing: 0.05em;
+
+			a{
+				color: #fff;
+				text-decoration: underline;
+
+				&:after{
+					content: '';
+					display: block;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+
+				&:hover{
+					// text-decoration: none;
+				}
+			}
+		}
+
+		.card-footer{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.card-location{
+				margin-right: 15px;
+				display: flex;
+				align-items: center;
+				white-space: nowrap;
+
+				i{
+					margin-right: 8px;
+					flex: none;
+				}
+
+				span{
+					font-size: 14px;
+					line-height: 20px;
+					display: block;
+				}
+			}
+
+			.card-places{
+				font-size: 12px;
+				line-height: 20px;
+				text-transform: uppercase;
+
+				strong{
+					font-weight: bold;
+					font-family: $second-font;
+					font-size: 30px;
+					line-height: 30px;
+					letter-spacing: 0.05em;
+				}
+			}
+		}
+	}
+
+	.card-photos-count{
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		padding: 0 20px;
+		background: #fff;
+
+		span{
+			font-size: 28px;
+			line-height: 30px;
+			color: $text-dark;
+			display: block;
+			margin-right: 8px;
+		}
+	}
+}

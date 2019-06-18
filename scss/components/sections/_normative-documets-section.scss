@@ -1,0 +1,19 @@
+.normative-documets-section{
+	padding: 0 0 85px;
+	position: relative;
+	z-index: 5;
+	background: $body-bg;
+
+	@media screen and (max-width: 991px){
+		margin-top: 0 !important;
+	}
+
+	&.gray-bg{
+		background: #f3f3f3;
+		padding: 185px 0 85px;
+
+		@media screen and (max-width: 991px){
+			padding-top: 85px;
+		}
+	}
+}
