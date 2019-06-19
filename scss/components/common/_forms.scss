@@ -1,124 +1,4 @@
-// .select-field{
-// 	display: inline-flex;
-// 	cursor: pointer;
-
-// 	&.fullwidth{
-// 		width: 100%;
-// 	}
-
-// 	.jcf-select{
-// 		border: 0;
-// 		margin-bottom: 0;
-// 		color: $text-color;
-// 		font-size: 16px;
-// 		height: 44px;
-// 		background: transparent;
-// 		transition: all $t;
-// 		cursor: pointer;
-// 		width: 100%;
-// 		min-width: auto;
-// 		border: 1px solid #cacaca;
-// 	}
-
-// 	.jcf-select-text{
-// 		line-height: 44px;
-// 		margin-right: 44px;
-// 		margin-left: 15px;
-// 		font-size: 16px;
-// 		cursor: pointer;
-
-// 		.jcf-option-hideme{
-// 			color: #717171;
-// 		}
-// 	}
-
-// 	.jcf-select-opener{
-// 		width: 44px;
-// 		background: none;
-// 		display: flex;
-// 		align-items: center;
-// 		justify-content: center;
-
-// 		&:before{
-// 			content: "";
-// 			display: block;
-// 			width: 12px;
-// 			height: 7px;
-// 			background: url(../img/icons/select-opener.png);
-// 			transition: all $t;
-// 		}
-// 	}
-
-// 	.jcf-drop-active{
-// 		.jcf-select-opener:before{
-// 			transform: rotate(-180deg);
-// 		}
-// 	}
-
-// 	.jcf-select-drop{
-// 		z-index: 90;
-
-// 		.jcf-select-drop-content{
-// 		}
-// 	}
-
-// 	.jcf-list{
-// 		margin: 5px 0;
-// 		overflow: hidden;
-// 		box-shadow: $shadow;
-
-// 		li{
-// 			border-bottom: 1px solid #eee;
-
-// 			&:last-child{
-// 				border-bottom: 0;
-// 			}
-// 		}
-
-// 		.jcf-option{
-// 			font-size: 14px;
-// 			line-height: 20px;
-// 			padding: 12px 22px;
-// 			color: $text-color;
-// 			cursor: pointer;
-// 			transition: all $t;
-// 			background: #fff;
-
-// 			&:hover,
-// 			&.jcf-selected{
-// 				color: $primary;
-// 				background: #eee;
-// 			}
-// 		}
-// 	}
-
-// 	&.white{
-// 		.jcf-select{
-// 			color: #fff;
-// 			border-color: #fff;
-// 		}
-
-// 		.jcf-select-opener{
-// 			&:before{
-// 				background: url(../img/icons/select-opener-orange.png);
-// 			}
-// 		}
-// 	}
-
-// 	&.small{
-// 		.jcf-select-text{
-// 			font-size: 14px;
-// 		}
-// 	}
-// }
-
 .form-field{
-	// p{
-	// 	margin-bottom: 10px;
-	// 	font-size: 18px;
-	// 	line-height: 1.444;
-	// }
-
 	.input-field,
 	.textarea{
 		border: 0;
@@ -139,6 +19,14 @@
 		&::placeholder{
 			color: #fff;
 			transition: all $t;
+		}
+
+		&.color-dark{
+			color: $text-color;
+
+			&::placeholder{
+				color: $text-dark;
+			}
 		}
 
 		&:focus{
@@ -223,6 +111,124 @@
 					opacity: 1;
 				}
 			}
+		}
+	}
+
+	&.dark{
+		input{
+			display: none;
+
+			+ label{
+				color: $text-color;
+
+				&:before{
+					background: #dedede;
+				}
+
+				&:after{
+					border-left: 2px solid #424242;
+					border-bottom: 2px solid #424242;
+				}
+			}
+		}
+	}
+}
+
+.attach-file{
+	.inputfile {
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		z-index: -1;
+
+		+ label{
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+
+			.label-icon{
+				flex: none;
+				margin-right: 15px;
+				width: 44px;
+				height: 44px;
+				border-radius: 5px;
+				background: #f6f6f6;
+				border: 2px solid #e3e3e3;
+				position: relative;
+
+				&:before,
+				&:after{
+					content: '';
+					display: block;
+					width: 18px;
+					height: 2px;
+					background: $accent;
+					position: absolute;
+					left: calc(50% - 9px);
+					top: calc(50% - 1px);
+				}
+
+				&:after{
+					transform: rotate(90deg);
+				}
+			}
+
+			.label-content{
+				width: calc(100% - 44px - 15px);
+				overflow: hidden;
+
+				.label-caption{
+					font-size: 16px;
+					line-height: 20px;
+					color: $text-dark;
+					font-family: $second-font;
+					font-weight: bold;
+					letter-spacing: 0.05em;
+					margin-bottom: 5px;
+				}
+
+				.label-subcaption{
+					font-size: 11px;
+					line-height: 16px;
+					color: $text-color;
+				}
+
+				.selected{
+					display: none;
+				}
+
+				.selected-file-name{
+					font-family: $second-font;
+					font-weight: bold;
+					color: $text-dark;
+					letter-spacing: 0.05em;
+					width: 100%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+
+			&.selected{
+				.label-content{
+					.not-selected{
+						display: none;
+					}
+
+					.selected{
+						display: block;
+					}
+				}
+			}
+
+			&:hover{}
+
+			*{ pointer-events: none; }
+		}
+
+		&:focus{
+			+ label{}
 		}
 	}
 }

@@ -1,0 +1,162 @@
+.text-with-cards-section{
+	background: #f3f3f3;
+	padding-bottom: 80px;
+
+	.section-inner{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		.section-text{
+			margin-right: 30px;
+			flex: auto;
+			max-width: 600px;
+		}
+
+		.section-cards{
+			width: 100%;
+			max-width: 435px;
+
+			.item{
+				margin-bottom: 25px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		@media screen and (max-width: 991px){
+			flex-direction: column;
+
+			.section-text{
+				margin-bottom: 40px;
+				max-width: 100%;
+			}
+		}
+
+		@media screen and (max-width: 991px) and (min-width: 768px){
+			.section-cards{
+				display: flex;
+				width: calc(100% + 30px);
+				margin-left: -15px;
+				margin-right: -15px;
+				max-width: unset;
+
+				.item{
+					padding: 0 15px;
+					margin: 0;
+				}
+			}
+		}
+
+		@media screen and (max-width: 767px){
+			.section-cards{
+				max-width: unset;
+			}
+		}
+	}
+}
+
+.catalog-card{
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	border-right: 3px solid $primary;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: all $t;
+	position: relative;
+	color: $text-dark;
+
+	.card-content{
+		padding: 25px 35px;
+
+		p{
+			font-size: 22px;
+			line-height: 30px;
+			font-family: $second-font;
+			font-weight: bold;
+			letter-spacing: 0.05em;
+			margin-bottom: 20px;
+		}
+
+		a{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 120px;
+			height: 36px;
+			border-radius: 18px;
+			border: 1px solid #d0d0d0;
+
+			i{
+				display: block;
+				margin-right: 6px;
+			}
+
+			span{
+				font-size: 12px;
+				color: $text-dark;
+			}
+
+			&:hover{
+				background: #fff;
+				border-color: #fff;
+			}
+
+			&:after{
+				content: '';
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+
+		@media screen and (max-width: 991px){
+			padding: 20px 0 20px 20px;
+		}
+	}
+
+	.card-image{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 15px 20px;
+		flex: auto;
+
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+
+		&.no-bottom-padding{
+			padding-bottom: 0;
+			align-items: flex-end;
+			align-self: flex-end;
+		}
+	}
+
+	&:hover{
+		background: $primary;
+		color: #fff;
+	}
+
+	@media screen and (max-width: 575px){
+		.card-content{
+			p{
+				font-size: 18px;
+				line-height: 24px;
+			}
+
+			a{
+				width: 100px;
+			}
+		}
+	}
+}

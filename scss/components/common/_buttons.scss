@@ -45,11 +45,34 @@
 			color: #fff;
 			background: $accent;
 		}
+
+		&.btn-white{
+			border-color: #fff;
+			color: #fff;
+
+			&:hover{
+				color: $primary;
+				background: #fff;
+			}
+		}
 	}
 
 	&.big-side-paddings{
 		padding-left: 50px;
 		padding-right: 50px;
+	}
+
+	@media screen and (max-width: 767px){
+		&.btn-sm-green{
+			background: $accent;
+			color: #fff;
+			border: 2px solid transparent !important;
+
+			&:hover{
+				background: darken($accent, 10%);
+				color: #fff;
+			}
+		}
 	}
 
 	@media screen and (max-width: 575px){

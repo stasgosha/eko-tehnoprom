@@ -1,0 +1,41 @@
+.production-section{
+	padding: 40px 0 80px;
+	background: #f3f3f3;
+
+	.section-links{
+		margin-top: 55px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: calc(100% + 14px);
+		margin-left: -7px;
+		margin-right: -7px;
+
+		.item{
+			padding: 0 7px;
+
+			.btn{
+				min-width: 310px;
+			}
+		}
+
+		@media screen and (max-width: 767px){
+			flex-direction: column;
+
+			.item{
+				margin-bottom: 7px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+
+				.btn{
+					padding-left: 20px;
+					padding-right: 20px;
+					width: 100%;
+					min-width: unset;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,103 @@
+.select-field{
+	display: inline-flex;
+	cursor: pointer;
+	width: 100%;
+
+	.jcf-select{
+		border: 0;
+		margin-bottom: 0;
+		color: $text-dark;
+		font-size: 12px;
+		height: 64px;
+		transition: all $t;
+		cursor: pointer;
+		width: 100%;
+		min-width: auto;
+		padding: 13px 0;
+		background: #fff;
+		box-shadow: 7px 7px 25px rgba(#001531, .08);
+	}
+
+	.jcf-select-text{
+		margin-right: 80px;
+		margin-left: 23px;
+		cursor: pointer;
+		font-family: $second-font;
+		font-size: 20px;
+		line-height: 36px;
+		font-weight: bold;
+
+		.jcf-option-hideme{
+			color: #717171;
+		}
+	}
+
+	.jcf-select-opener{
+		width: 36px;
+		height: 36px;
+		background: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #e2e2e2;
+		border-radius: 50%;
+		margin-right: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+
+		&:before{
+			content: "";
+			display: block;
+			width: 8px;
+			height: 8px;
+			border-bottom: 2px solid $dark;
+			border-right: 2px solid $dark;
+			transition: all $t;
+			transform: translateY(-2px) rotate(45deg);
+		}
+	}
+
+	.jcf-drop-active{
+		.jcf-select-opener:before{
+			transform: rotate(-180deg);
+		}
+	}
+
+	.jcf-select-drop{
+		z-index: 90;
+
+		.jcf-select-drop-content{
+		}
+	}
+
+	.jcf-list{
+		margin: 5px 0;
+		overflow: hidden;
+		box-shadow: $shadow;
+		border-radius: $r;
+
+		li{
+			border-bottom: 1px solid #eee;
+
+			&:last-child{
+				border-bottom: 0;
+			}
+		}
+
+		.jcf-option{
+			font-size: 14px;
+			line-height: 20px;
+			padding: 12px 22px;
+			color: $text-color;
+			cursor: pointer;
+			transition: all $t;
+			background: #fff;
+
+			&:hover,
+			&.jcf-selected{
+				color: $primary;
+				background: #f7f7f7;
+			}
+		}
+	}
+}

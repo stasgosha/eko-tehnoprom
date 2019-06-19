@@ -31,6 +31,9 @@
 @import "components/sections/tasks-section";
 @import "components/sections/contacts-section";
 @import "components/sections/big-slider-section";
+@import "components/sections/text-with-cards-section";
+@import "components/sections/one-project-info-section";
+@import "components/sections/production-section";
 
 // Footer
 @import "components/footer/footer";
@@ -58,3 +61,7 @@
 @import "components/common/task-card";
 @import "components/common/contacts-component";
 @import "components/common/big-slider";
+@import "components/common/select-field";
+@import "components/common/info-list";
+@import "components/common/production-slider";
+@import "components/common/production-card";

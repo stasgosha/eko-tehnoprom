@@ -3,6 +3,10 @@
 	background: #f3f3f3;
 	position: relative;
 
+	&.no-bottom-padding{
+		padding-bottom: 0;
+	}
+
 	&:before{
 		content: '';
 		display: block;

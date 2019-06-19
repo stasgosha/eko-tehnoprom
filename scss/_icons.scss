@@ -26,6 +26,10 @@
 	width: 32px;
 	height: 11px;
 	background: url(../img/icons/arrow-right-big.png) no-repeat center center;
+
+	.with-icon-hover:hover &{
+		background: url(../img/icons/arrow-right-big-blue.png) no-repeat center center;
+	}
 }
 
 .icon-arrow-left-big{
@@ -34,10 +38,22 @@
 	background: url(../img/icons/arrow-left-big.png) no-repeat center center;
 }
 
+.icon-arrow-down{
+	width: 9px;
+	height: 11px;
+	background: url(../img/icons/arrow-down.png) no-repeat center center;
+}
+
 .icon-location{
 	width: 13px;
 	height: 18px;
 	background: url(../img/icons/location.png) no-repeat center center;
+}
+
+.icon-location-big{
+	width: 36px;
+	height: 48px;
+	background: url(../img/icons/location-big.png) no-repeat center center;
 }
 
 .icon-camera{
@@ -86,4 +102,28 @@
 	width: 18px;
 	height: 18px;
 	background: url(../img/icons/clock.png) no-repeat center center;
+}
+
+.icon-calendar{
+	width: 16px;
+	height: 16px;
+	background: url(../img/icons/calendar.png) no-repeat center center;
+}
+
+.icon-tape{
+	width: 24px;
+	height: 16px;
+	background: url(../img/icons/tape.png) no-repeat center center;
+}
+
+.icon-person{
+	width: 11px;
+	height: 12px;
+	background: url(../img/icons/person.png) no-repeat center center;
+}
+
+.icon-close{
+	width: 12px;
+	height: 12px;
+	background: url(../img/icons/close.png) no-repeat center center;
 }

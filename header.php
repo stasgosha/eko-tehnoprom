@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+	<link rel="stylesheet" href="css/jcf.css">
 	<link rel="stylesheet" href="css/main.css">
 	<?php //wp_head(); ?>
 </head>
@@ -77,7 +78,7 @@
 								</div>
 							</div>
 							<div class="tnl-block">
-								<a href="#" class="tnl-order-btn"><span>Отправить </span>запрос на КП</a>
+								<a href="#" class="tnl-order-btn" data-toggle="modal" data-target="#modal-offer"><span>Отправить </span>запрос на КП</a>
 							</div>
 						</div>
 					</div>

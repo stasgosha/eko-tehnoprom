@@ -1,7 +1,13 @@
 .big-slider-section{
 	padding-bottom: 80px;
+	background: #f3f3f3;
+	padding-top: 0 !important;
 
 	.tabs-nav{
 		margin-bottom: 19px !important; // 19px + 6px = 25px
+	}
+
+	@media screen and (max-width: 767px){
+		padding-bottom: 5px;
 	}
 }

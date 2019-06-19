@@ -78,6 +78,44 @@ $(document).ready(function(){
 		$(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
 	});
 
+	$('.production-slider').slick({
+		arrows: true,
+		dots: false,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		infinite: true,
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					arrows: false,
+					dots: true
+				}
+			},
+			{
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1,
+					arrows: false,
+					dots: true
+				}
+			}
+		]
+	});
+
 	$('.projects-slider').slick({
 		arrows: false,
 		dots: true,
@@ -116,8 +154,61 @@ $(document).ready(function(){
 		$(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
 	});
 
+
+
+
+
+
+	// Big slider
+	function bigSliderBeforeChange(event, slick, currentSlide, nextSlide) {
+		if (!nextSlide) {
+			nextSlide = 0;
+		}
+
+		// Set new link href ant text
+		var nextSlideElem = $(this).find(`[data-slick-index=${nextSlide}]`);
+		var buttonLink = nextSlideElem.data('slide-link');
+		var buttonText = nextSlideElem.data('link-text');
+
+		var slideLink = $(this).closest('.big-slider-wrapper').find('.more-link a');
+
+		slideLink.attr('href', buttonLink);
+
+		if (!!buttonText) {
+			$(this).closest('.big-slider-wrapper').find('.js-link-text').html(buttonText);
+		}
+
+		// Highlight current nav item
+		var sliderId = $(this).attr('id');
+		var linkedTabsNavs = $(`[data-target-slider="#${sliderId}"]`);
+
+		for (var i = 0; i < linkedTabsNavs.length; i++) {
+			var navTarget = $(linkedTabsNavs[i]);
+
+			if (navTarget.is('.tabs-nav')) {
+				navTarget
+					.find(`[data-slide=${nextSlide}]`).addClass('current')
+					.siblings().removeClass('current');
+			}
+
+			if (navTarget.is('select')) {
+				navTarget.val(nextSlide);
+				jcf.refresh( $('.js-big-slider-nav') );
+			}
+		}
+
+		// Update current index and total count widget
+		var countWidget = $(this).closest('.big-slider-wrapper').find('.big-slider-total-slides')[0];
+
+		$(countWidget).find('.current-index').text((nextSlide + 1));
+		$(countWidget).find('.total-count').text(slick.slideCount);
+	}
+
+	$('.big-slider').on('beforeChange', bigSliderBeforeChange);
+	$('.big-slider').on('init', bigSliderBeforeChange);
+
 	$('.big-slider').slick({
-		arrows: false,
+		arrows: true,
 		dots: false,
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -125,11 +216,40 @@ $(document).ready(function(){
 		centerMode: true,
 		variableWidth: true,
 		focusOnSelect: true,
-		speed: 600
+		speed: 600,
+		appendArrows: '.big-slider-wrapper .slider-arrows',
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					centerMode: false,
+					arrows: false,
+					dots: true,
+					variableWidth: false
+				}
+			}
+		]
 	});
 
+	$('[data-slide]').click(function(){
+		var targetSlider = $( $(this).closest('[data-target-slider]').data('target-slider') );
+		var targetSlide = $(this).data('slide');
+
+		targetSlider.slick('slickGoTo', targetSlide);
+	});
+
+	$('.js-big-slider-nav').on('change', function(){
+		var target = $( $(this).data('target-slider') )[0];
+		$(target).slick('slickGoTo', this.value);
+	});
+
+
+
+
+
+
 	// Scroll to anchor
-	$('a[href^="#"]').click(function(){
+	$('a[href^="#"]:not([data-toggle])').click(function(){
 		 $('html, body').animate({
 			scrollTop: $( $.attr(this, 'href') ).offset().top
 		}, 500);
@@ -141,6 +261,15 @@ $(document).ready(function(){
 		$(this).parent().toggleClass('opened');
 		$(this).siblings('.cmp-content').stop().slideToggle(300);
 	});
+
+	// Select Field
+	jcf.setOptions('Select', {
+		wrapNative: false,
+		wrapNativeOnMobile: true,
+		fakeDropInBody: false
+	});
+
+	jcf.replace( $('.select-field select') );
 
 	// Tabs
 	$("[data-tab]").click(function(e){
@@ -164,6 +293,33 @@ $(document).ready(function(){
 			$('.header').removeClass('sticky');
 			isSticky = false;
 		}
+	});
+
+
+	// File Input
+	var inputs = document.querySelectorAll( '.inputfile' );
+	Array.prototype.forEach.call( inputs, function( input )
+	{
+		var label	 = input.nextElementSibling,
+			labelVal = label.innerHTML;
+
+		input.addEventListener( 'change', function( e )
+		{
+			var fileName = '';
+			if( this.files && this.files.length > 1 ){
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			} else{
+				fileName = e.target.value.split( '\\' ).pop();
+			}
+
+			if( fileName ){
+				label.querySelector( '.selected-file-name' ).innerHTML = fileName;
+				label.classList.add('selected');
+			} else{
+				label.innerHTML = labelVal;
+				label.classList.remove('selected');
+			}
+		});
 	});
 
 	// TODO: ↓↓↓ remove this script ↓↓↓

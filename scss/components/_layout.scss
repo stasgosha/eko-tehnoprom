@@ -84,7 +84,11 @@ ol, ul{
 .modal{
 	.modal-content{
 		.modal-body{
-			padding: 30px 35px 50px;
+			padding: 35px 50px 55px;
+
+			@media screen and (max-width: 575px){
+				padding: 35px 25px 30px;
+			}
 		}
 	}
 
@@ -98,12 +102,24 @@ ol, ul{
 		}
 	}
 
+	.modal-caption{
+		color: $primary;
+		text-align: center;
+		margin-bottom: 25px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
 	.modal-close{
 		position: absolute;
-		right: -22px;
-		top: -22px;
+		right: 0;
+		top: 0;
 		z-index: 5;
-		border-radius: 50%;
+		width: 36px;
+		height: 36px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		cursor: pointer;
 
 		i{
@@ -114,7 +130,40 @@ ol, ul{
 
 	&.narrow{
 		.modal-dialog{
-			max-width: 340px;
+			max-width: 370px;
+		}
+	}
+
+	.modal-success{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.success-icon{
+			margin-bottom: 25px;
+
+			img{
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
+		}
+
+		.success-caption{
+			font-size: 18px;
+			line-height: 24px;
+			color: $primary;
+			margin-bottom: 25px;
+			text-align: center;
+			letter-spacing: 0.05em;
+			font-family: $second-font;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		p{
+			text-align: center;
+			width: 100%;
 		}
 	}
 }
